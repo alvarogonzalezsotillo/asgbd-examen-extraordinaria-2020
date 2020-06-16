@@ -39,7 +39,7 @@ then
 		echo ya existe el usuario
 	else 
 		crea_usuario
-	elif existe_rol
+	if existe_rol
 	then 
 			echo el rol existe procedemos a asignarselo
 			sqlplus SIMON/P834acb9 <<EOE 
