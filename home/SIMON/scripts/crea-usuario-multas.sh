@@ -6,7 +6,7 @@ export ORACLE_HOME=/u01/app/oracle/product/11.2.0/xe
 crea_usuario(){
 	sqlplus SIMON/P834acb9 <<EOF
 	create user SIMON_'$1' identified by USUARIO;
-	grant connect, resource, create to '$1';
+	grant connect, resource, create to $1;
 EOF
 }
 
@@ -20,7 +20,9 @@ if [ $# -eq 1 ]
 then
 	if existe_usuario
 	then
-		
+		echo ya existe el usuario
+	else 
+		crea_usuario
 else 
 	echo necesito un parametro
 fi
