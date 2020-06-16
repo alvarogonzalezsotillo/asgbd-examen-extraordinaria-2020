@@ -39,6 +39,7 @@ then
 		echo ya existe el usuario
 	else 
 		crea_usuario
+	fi
 	if existe_rol
 	then 
 			echo el rol existe procedemos a asignarselo
