@@ -3,6 +3,14 @@
 export ORACLE_SID=XE
 export ORACLE_HOME=/u01/app/oracle/product/11.2.0/xe
 
+
+existe_rol(){
+	sqlplus SIMON/P834acb9 <<FDA
+	select role from dba_roles where role = 'SIMON_rol';
+FDA
+}
+
+
 crea_rol(){
 	sqlplus SIMON/P834acb9 <<HEREDOC
 	create role SIMON_rol
