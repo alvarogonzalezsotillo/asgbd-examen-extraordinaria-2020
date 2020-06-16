@@ -9,7 +9,7 @@ var=$1
 if [[ -z "$var" ]]; then
 	echo "====================================="
 	echo "Numero de variables vacio."
-	echo "Cree un usuario nuevo de oracle.
+	echo "Cree un usuario nuevo de oracle."
 	echo "====================================="
 
 elif [[ $# -eq 2 ]]; then
