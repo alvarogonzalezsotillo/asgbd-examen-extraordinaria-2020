@@ -5,7 +5,7 @@ export ORACLE_HOME=/u01/app/oracle/product/11.2.0/xe
 
 
 existe_rol(){
-	sqlplus SIMON/P834acb9 <<FDA | 
+	sqlplus SIMON/P834acb9 <<FDA 
 	select role from dba_roles where role = 'SIMON_rol';
 FDA
 }
@@ -39,12 +39,15 @@ then
 		echo ya existe el usuario
 	else 
 		crea_usuario
-		elif existe_rol
-		then 
+	elif existe_rol
+	then 
 			echo el rol existe procedemos a asignarselo
 			sqlplus SIMON/P834acb9 <<EOE 
 			grant SIMON_rol to SIMON_'$1';
-
+EOE
+	else 
+			crea_rol
+	fi
 else 
 	echo necesito un parametro
 fi
