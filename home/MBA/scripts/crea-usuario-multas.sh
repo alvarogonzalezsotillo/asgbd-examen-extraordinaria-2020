@@ -25,9 +25,7 @@ elif [[ $# -eq 1 ]]; then
 			select username into cdo from dba_users where upper(username)='${1^^}';
 			dbms_output.put_line{'Usuario creado: '|| creado);
 		else
-			dbms_output.put_line{'Ya existe el usuario: $1'};
-			whenever oserror exit 9;
-			whenever sqlerror exit sql.sqlcode;
+			dbms_output.put_line{'Ya existe el usuario: $1'};			
 		end if;
 	end;
 	/
