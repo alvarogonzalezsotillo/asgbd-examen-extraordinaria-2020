@@ -6,7 +6,7 @@ EOF
 expdp CONDORI/P058ad62 DIRECTORY=backups_CONDORI LOGFILE=CONDORI.log
 
 USUARIO=$1
-DATE=$(date +"%T")
+DATE=$(date)
 
 busca_en_oracle(){
 	sqlplus / as sysdba <<INS | grep -i $USUARIO
