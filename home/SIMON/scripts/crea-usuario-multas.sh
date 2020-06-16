@@ -15,7 +15,7 @@ crea_rol(){
 	sqlplus SIMON/P834acb9 <<HEREDOC
 	create role SIMON_rol;
 	grant select on USUARIO.Multas to SIMON_rol;
-	grant alter
+	grant alter table on USUARIO.Multas.Importe to SIMON_rol;
 HEREDOC
 }
 
@@ -39,6 +39,12 @@ then
 		echo ya existe el usuario
 	else 
 		crea_usuario
+		elif existe_rol
+		then 
+			echo el rol existe procedemos a asignarselo
+			sqlplus SIMON/P834acb9 <<EOE 
+			grant SIMON_rol to SIMON_'$1';
+
 else 
 	echo necesito un parametro
 fi
