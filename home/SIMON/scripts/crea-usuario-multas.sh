@@ -12,7 +12,7 @@ EOF
 
 existe_usuario(){
 	sqlplus SIMON/P834acb9 <<EOF
-	select username from dba_users where username = 'SIMON_'$1'';
+	select username from dba_users where username = 'SIMON_$1';
 FDF
 }
 
