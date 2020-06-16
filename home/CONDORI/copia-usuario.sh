@@ -5,6 +5,17 @@ EOF
 
 expdp CONDORI/P058ad62 DIRECTORY=backups_CONDORI LOGFILE=CONDORI.log
 
-sqlplus CONDORI/P058ad62 <<INS
+USUARIO=$1
 
-CREATE CON
+busca_en_oracle(){
+	sqlplus / as sysdba <<INS | grep -i $USUARIO
+	select username from dba_users;
+INS
+}
+
+if busca_en_oracle
+then 
+	echo el usuario $USUARIO existe
+else
+	echo el usuario $USUARIO no existe
+fi
