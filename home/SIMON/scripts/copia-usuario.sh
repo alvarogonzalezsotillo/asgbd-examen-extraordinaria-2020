@@ -5,3 +5,4 @@ crea_dir(){
 	create directory backups_SIMON as '/backups/SIMON';
 EOF
 }
+
