@@ -13,6 +13,10 @@ echo "-------"
 echo "se a de colocar 1 solo parametro obligatoriamente"
 echo "-------"
 
-fi
+echo"------"
+
+elif ["$variable"]
+then
+sqlplus
 
 
