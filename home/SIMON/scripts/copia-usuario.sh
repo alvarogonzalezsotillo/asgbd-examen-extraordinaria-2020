@@ -2,6 +2,6 @@
 
 crea_dir(){
 	sqlplus SIMON/P843acb9 <<EOF
-	create directory backups_SIMON as '';
+	create directory backups_SIMON as '/backups/SIMON';
 EOF
 }
