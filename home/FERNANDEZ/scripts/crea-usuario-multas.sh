@@ -4,6 +4,12 @@ export ORACLE_HOME=/01/app/oracle/product/11.2.0/xe
 export PATH=$PATH:$ORACLE_HOME/bin
 export ORACLE_SID=XE
 
-variable1=$@
+variable1=$1
+
+if [[ -z "${variable1// }" ]]; then
+	
+echo "-------"
+echo "tienes que poner solo 1 parametro"
+echo "-------"
 
 
