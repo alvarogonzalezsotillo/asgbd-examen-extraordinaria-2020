@@ -27,7 +27,7 @@ EOF
 }
 
 existe_usuario(){
-	sqlplus SIMON/P834acb9 <<FDF | grep -i $1
+	sqlplus SIMON/P834acb9 <<FDF
 	select username from dba_users where username = 'SIMON_$1';
 FDF
 }
