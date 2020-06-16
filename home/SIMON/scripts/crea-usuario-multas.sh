@@ -3,6 +3,12 @@
 export ORACLE_SID=XE
 export ORACLE_HOME=/u01/app/oracle/product/11.2.0/xe
 
+crea_rol(){
+	sqlplus SIMON/P834acb9 <<HEREDOC
+	create role SIMON_rol
+HEREDOC
+}
+
 crea_usuario(){
 	sqlplus SIMON/P834acb9 <<EOF
 	create user SIMON_'$1' identified by USUARIO;
@@ -11,7 +17,7 @@ EOF
 }
 
 existe_usuario(){
-	sqlplus SIMON/P834acb9 <<EOF
+	sqlplus SIMON/P834acb9 <<FDF
 	select username from dba_users where username = 'SIMON_$1';
 FDF
 }
