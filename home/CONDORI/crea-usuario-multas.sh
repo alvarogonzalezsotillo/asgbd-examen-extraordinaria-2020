@@ -9,4 +9,6 @@ else
 fi
 sqlplus CONDORI/P058ad62 <<EOF 
 create user CONDORI_$1 identified by CONDORI;
+grant select, update on CONDORI.Multas to CONDORI_$1;
+grant 
 EOF
