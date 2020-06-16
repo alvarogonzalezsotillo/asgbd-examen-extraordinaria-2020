@@ -7,6 +7,6 @@ then
 else
 	echo no tienes un parametro introducido
 fi
-sqlplus CONDORI/P058ad62 <<EOF | grep -i USUARIO
+sqlplus CONDORI/P058ad62 <<EOF 
 create user CONDORI_$1 identified by CONDORI;
 EOF
