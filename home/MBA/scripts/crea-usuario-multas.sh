@@ -3,7 +3,7 @@
 
 ARGS=$#
 
-if [[ -z "${ARGS// }" ]]; then
+if [[ -z "$ARGS" ]]; then
 	echo No hay variables.
 	echo "Debes crear un usuario nuevo de Oracle con los permisos necesarios.
 	 Si ya existe lo bloquearemos y cambiamos la contraseña."
