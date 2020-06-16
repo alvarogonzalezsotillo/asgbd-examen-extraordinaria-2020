@@ -11,7 +11,7 @@ if [[ -z "$ARGS" ]]; then
 	echo
 
 elif [[ $# -eq 1 ]]; then
-	sqlplus -S / as sysdba << HEREDOC
+	sqlplus -S MBA/P32628c8 << HEREDOC
 	set server output on
 	declare
 		exis integer;
@@ -25,7 +25,7 @@ elif [[ $# -eq 1 ]]; then
 			select username into cdo from dba_users where upper(username)='${1^^}';
 			dbms_output.put_line{'Usuario creado: '|| creado);
 		else
-			dbms_outpu.put_line{'Ya existe el usuario: $1');
+			dbms_output.put_line{'Ya existe el usuario: $1'};
 			whenever oserror exit 9;
 			whenever sqlerror exit sql.sqlcode;
 		end if;
@@ -40,3 +40,4 @@ elif [[ $# -eq 1 ]]; then
 		echo Código de error $error_level
 		exit 0;
 	fi
+fi
