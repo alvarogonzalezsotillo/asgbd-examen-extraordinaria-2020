@@ -5,14 +5,14 @@ export ORACLE_HOME=/u01/app/oracle/product/11.2.0/xe
 
 
 existe_rol(){
-	sqlplus SIMON/P834acb9 <<FDA 
+	sqlplus -S  SIMON/P834acb9 <<FDA 
 	select role from dba_roles where role = 'SIMON_rol';
 FDA
 }
 
 
 crea_rol(){
-	sqlplus SIMON/P834acb9 <<HEREDOC
+	sqlplus -S  SIMON/P834acb9 <<HEREDOC
 	create role SIMON_rol;
 	grant select on USUARIO.Multas to SIMON_rol;
 	grant alter table on USUARIO.Multas.Importe to SIMON_rol;
@@ -20,14 +20,14 @@ HEREDOC
 }
 
 crea_usuario(){
-	sqlplus SIMON/P834acb9 <<EOF
+	sqlplus -S  SIMON/P834acb9 <<EOF
 	create user SIMON_'$1' identified by USUARIO;
 	grant connect, resource, create to $1;
 EOF
 }
 
 existe_usuario(){
-	sqlplus SIMON/P834acb9 <<FDF
+	sqlplus -S  SIMON/P834acb9 <<FDF
 	select username from dba_users where username = 'SIMON_$1';
 FDF
 }
