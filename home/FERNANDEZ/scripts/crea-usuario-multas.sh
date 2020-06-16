@@ -6,7 +6,7 @@ export ORACLE_SID=XE
 
 variable1=$1
 
-if [[ -z "${variable1// }" ]]; then
+if [[ -z "$variable1" ]]; then
 	
 echo "-------"
 echo "tienes que poner solo 1 parametro"
